@@ -707,3 +707,131 @@ header {
     font-size: 13px;
   }
 }
+
+
+/* ========== FOOTER ========== */
+.footer {
+  background-color: #373a3c;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 40px 40px 0;
+  font-family: var(--font-family);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+}
+
+.footer-column {
+  flex: 1;
+}
+
+.footer-heading {
+  color: #8dd83d;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links img {
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.social-links img:hover {
+  opacity: 0.7;
+}
+
+/* Жирная общая черта */
+.footer-bottom {
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 3px solid #979797;
+}
+
+.footer-bottom .footer-container {
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.language {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.copyright {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========== АДАПТИВНОСТЬ ДЛЯ ФУТЕРА ========== */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px 0;
+  }
+  
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .footer-bottom .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 15px 0;
+  }
+  
+  .footer-container {
+    gap: 25px;
+  }
+  
+  .footer-heading {
+    font-size: 14px;
+  }
+  
+  .footer-links a {
+    font-size: 12px;
+  }
+}
