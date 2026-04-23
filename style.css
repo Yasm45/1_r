@@ -156,7 +156,6 @@ header {
   padding: 60px 0;
 }
 
-/* НОВЫЙ БЛОК С ИКОНКОЙ - отступ сверху 64px, по центру */
 .highlights-icon {
   text-align: center;
   margin-top: 64px;
@@ -178,18 +177,20 @@ header {
 
 .highlights-grid {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 30px;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 
 .highlight-card {
   background-color: #fff;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
-  flex: 1;
-  text-align: center;
-  padding-bottom: 30px;
+  width: 320px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-image {
@@ -198,12 +199,20 @@ header {
   object-fit: cover;
 }
 
+.card-content {
+  padding: 0 21px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .card-title {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 24px;
   color: #435766;
   margin: 20px 0 10px;
+  text-align: left;
 }
 
 .card-desc {
@@ -213,23 +222,161 @@ header {
   color: #435766;
   line-height: 1.5;
   margin-bottom: 20px;
-  padding: 0 15px;
+  text-align: left;
 }
 
 .card-btn {
   background-color: #8DD83D;
   color: white;
   border: none;
-  padding: 10px 24px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 14px;
-  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  width: 278px;
+  height: 60px;
+  margin-top: auto;
+  margin-bottom: 21px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0;
+}
+
+.card-btn:hover {
+  opacity: 0.8;
+}
+
+/* ========== ТРЕТЬЯ СЕКЦИЯ EXCLUSIVE - ПО ЦЕНТРУ ========== */
+.exclusive {
+  background-image: url('./img/bg_2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 880px;
+  padding: 0;
+}
+
+.exclusive-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.exclusive-title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  padding-top: 97px;
+  margin-bottom: 53px;
+}
+
+/* Карточки по центру, flex-wrap для адаптива */
+.exclusive-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.exclusive-card {
+  background-color: #fff;
+  width: 320px;
+  height: 420px;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.exclusive-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Контент карточки - выравнивание кнопки внизу */
+.exclusive-card-content {
+  padding: 0 21px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.exclusive-card-text {
+  flex: 1;
+}
+
+.exclusive-game-title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  color: #435766;
+  margin-top: 22px;
+  text-align: left;
+}
+
+.exclusive-game-desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 21px;
+  color: #435766;
+  margin-top: 16px;
+  text-align: left;
+  line-height: 1.3;
+}
+
+/* Кнопка в карточке третьей секции */
+.exclusive-card-btn {
+  width: 278px;
+  height: 60px;
+  background-color: #8DD83D;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 100%;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 30px;
+  margin-bottom: 0;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+.exclusive-card-btn:hover {
+  opacity: 0.8;
+}
+
+/* Кнопка XBOX Store внизу */
+.exclusive-store-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding-bottom: 80px;
+}
+
+.exclusive-store-btn {
+  width: 207px;
+  height: 53px;
+  background-color: #686C6F;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 100%;
+  color: #fff;
   cursor: pointer;
   transition: opacity 0.2s;
 }
 
-.card-btn:hover {
+.exclusive-store-btn:hover {
   opacity: 0.8;
 }
 
@@ -291,7 +438,6 @@ header {
     padding: 40px 0;
   }
 
-  /* Иконка на планшете */
   .highlights-icon {
     margin-top: 50px;
   }
@@ -303,25 +449,22 @@ header {
 
   .highlights-grid {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     margin-top: 30px;
   }
-
-  .card-image {
-    height: 150px;
+  
+  .exclusive {
+    min-height: auto;
   }
-
-  .card-title {
-    font-size: 20px;
+  
+  .exclusive-title {
+    font-size: 28px;
+    padding-top: 60px;
   }
-
-  .card-desc {
-    font-size: 14px;
-  }
-
-  .card-btn {
-    padding: 8px 20px;
-    font-size: 12px;
+  
+  .exclusive-container {
+    padding: 0 15px;
   }
 }
 
@@ -338,15 +481,7 @@ header {
     font-size: 14px;
   }
 
-  .header-container li {
-    gap: 4px;
-  }
-
   .hero {
-    height: 450px;
-  }
-
-  .hero-container {
     height: 450px;
   }
 
@@ -372,16 +507,6 @@ header {
     align-items: flex-end;
   }
 
-  .btn {
-    width: 130px;
-    height: 36px;
-  }
-
-  .highlights {
-    padding: 30px 0;
-  }
-
-  /* Иконка на телефоне */
   .highlights-icon {
     margin-top: 40px;
   }
@@ -390,66 +515,18 @@ header {
     font-size: 24px;
     padding: 0 10px;
   }
-
-  .highlight-card {
-    margin: 0 5px;
+  
+  .exclusive-title {
+    font-size: 24px;
+    padding-top: 40px;
+    margin-bottom: 30px;
   }
-
-  .card-image {
-    height: 130px;
-  }
-
-  .card-title {
-    font-size: 18px;
-    margin: 15px 0 8px;
-  }
-
-  .card-desc {
-    font-size: 13px;
-    margin-bottom: 15px;
-    padding: 0 10px;
-  }
-
+  
   .card-btn {
-    padding: 6px 16px;
-    font-size: 11px;
+    width: 240px;
   }
-}
-
-@media (max-width: 375px) {
-  .hero-title {
-    top: 80px;
-    font-size: 22px;
-  }
-
-  .hero-subtitle {
-    top: 108px;
-    font-size: 14px;
-  }
-
-  .hero-buttons {
-    top: 260px;
-  }
-
-  .btn {
-    width: 120px;
-    height: 34px;
-    font-size: 11px;
-  }
-
-  .highlights-icon {
-    margin-top: 32px;
-  }
-
-  .highlights-title {
-    font-size: 22px;
-  }
-
-  .card-title {
-    font-size: 16px;
-  }
-
-  .card-desc {
-    font-size: 12px;
+  
+  .exclusive-card-btn {
+    width: 240px;
   }
 }
